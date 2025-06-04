@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+
+        <style>
+            body {
+                background: url("ph_map.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            .btn-purple,
+            .btn-purple:hover,
+            .btn-purple:focus,
+            .btn-purple:active {
+                background-color: rgb(91, 63, 134);
+                color: white;
+            }
+            .btn-purple:hover {
+                font-weight: bolder;
+            }
+            .hashtags {
+                text-align: center;
+            }
+
+            .hashtags a {
+                color: rgb(91, 63, 134);
+                font-weight: bold;
+            }
+
+            .heading {
+                text-align: center;
+                color: #454343;
+                font-size: 30px;
+                font-weight: 700;
+                position: relative;
+                margin-bottom: 70px;
+                text-transform: uppercase;
+                z-index: 999;
+            }
+            .white-heading {
+                color: #ffffff;
+            }
+            .heading:after {
+                content: " ";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                height: 40px;
+                width: 180px;
+                border-radius: 4px;
+                transform: translateX(-50%);
+                background: url(img/heading-line.png);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            .white-heading:after {
+                background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .heading span {
+                font-size: 18px;
+                display: block;
+                font-weight: 500;
+            }
+            .white-heading span {
+                color: #ffffff;
+            }
+            /*-----Testimonial-------*/
+
+            .testimonial:after {
+                position: absolute;
+                top: -0 !important;
+                left: 0;
+                content: " ";
+                /* background: url(img/testimonial.bg-top.png); */
+                background-size: 100% 100px;
+                width: 100%;
+                height: 100px;
+                float: left;
+                z-index: 99;
+            }
+
+            .testimonial {
+                min-height: 375px;
+                position: relative;
+                /* background: url(https://i.ibb.co/PTJDkgb/testimonials.jpg); */
+                padding-top: 50px;
+                padding-bottom: 50px;
+                background-position: center;
+                background-size: cover;
+            }
+            #testimonial4 .carousel-inner:hover {
+                cursor: -moz-grab;
+                cursor: -webkit-grab;
+            }
+            #testimonial4 .carousel-inner:active {
+                cursor: -moz-grabbing;
+                cursor: -webkit-grabbing;
+            }
+            #testimonial4 .carousel-inner .item {
+                overflow: hidden;
+            }
+
+            .testimonial4_indicators .carousel-indicators {
+                left: 0;
+                margin: 0;
+                width: 100%;
+                font-size: 0;
+                height: 20px;
+                bottom: 15px;
+                padding: 0 5px;
+                cursor: e-resize;
+                overflow-x: auto;
+                overflow-y: hidden;
+                position: absolute;
+                text-align: center;
+                white-space: nowrap;
+            }
+            .testimonial4_indicators .carousel-indicators li {
+                padding: 0;
+                width: 14px;
+                height: 14px;
+                border: none;
+                text-indent: 0;
+                margin: 2px 3px;
+                cursor: pointer;
+                display: inline-block;
+                background: #ffffff;
+                -webkit-border-radius: 100%;
+                border-radius: 100%;
+            }
+            .testimonial4_indicators .carousel-indicators .active {
+                padding: 0;
+                width: 14px;
+                height: 14px;
+                border: none;
+                margin: 2px 3px;
+                background-color: #9dd3af;
+                -webkit-border-radius: 100%;
+                border-radius: 100%;
+            }
+            .testimonial4_indicators .carousel-indicators::-webkit-scrollbar {
+                height: 3px;
+            }
+            .testimonial4_indicators
+                .carousel-indicators::-webkit-scrollbar-thumb {
+                background: #eeeeee;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+            }
+
+            .testimonial4_control_button .carousel-control {
+                top: 175px;
+                opacity: 1;
+                width: 40px;
+                bottom: auto;
+                height: 40px;
+                font-size: 10px;
+                cursor: pointer;
+                font-weight: 700;
+                overflow: hidden;
+                line-height: 38px;
+                text-shadow: none;
+                text-align: center;
+                position: absolute;
+                background: transparent;
+                border: 2px solid #ffffff;
+                text-transform: uppercase;
+                -webkit-border-radius: 100%;
+                border-radius: 100%;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                -webkit-transition: all 0.6s cubic-bezier(0.3, 1, 0, 1);
+                transition: all 0.6s cubic-bezier(0.3, 1, 0, 1);
+            }
+            .testimonial4_control_button .carousel-control.left {
+                left: 7%;
+                top: 50%;
+                right: auto;
+            }
+            .testimonial4_control_button .carousel-control.right {
+                right: 7%;
+                top: 50%;
+                left: auto;
+            }
+            .testimonial4_control_button .carousel-control.left:hover,
+            .testimonial4_control_button .carousel-control.right:hover {
+                color: #000;
+                background: #fff;
+                border: 2px solid #fff;
+            }
+
+            .testimonial4_header {
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 550px;
+                display: block;
+                margin: 30px auto;
+                text-align: center;
+                position: relative;
+            }
+            .testimonial4_header h4 {
+                color: #ffffff;
+                font-size: 30px;
+                font-weight: 600;
+                position: relative;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            .testimonial4_slide {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 70%;
+                margin: auto;
+                padding: 20px;
+                position: relative;
+                text-align: center;
+            }
+            .testimonial4_slide img {
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 136px;
+                height: 136px;
+                margin: auto;
+                display: block;
+                color: #f2f2f2;
+                font-size: 18px;
+                line-height: 46px;
+                text-align: center;
+                position: relative;
+                border-radius: 50%;
+                box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+                -moz-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+                -o-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+                -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
+            }
+            .testimonial4_slide p {
+                color: #ffffff;
+                font-size: 20px;
+                line-height: 1.4;
+                margin: 40px 0 20px 0;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 17px;
+                padding: 10px;
+            }
+            .testimonial4_slide h4 {
+                color: #ffffff;
+                font-size: 22px;
+            }
+
+            .testimonial .carousel {
+                padding-bottom: 50px;
+            }
+            .testimonial .carousel-control-next-icon,
+            .testimonial .carousel-control-prev-icon {
+                width: 35px;
+                height: 35px;
+            }
+            /* ------testimonial  close-------*/
+        </style>
+        <title>pray247.revivalpilipinas.org</title>
+        <link rel="shortcut icon" type="image/png" href="philippines.png" />
+    </head>
+    <body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+
+        <button
+            type="button"
+            class="btn btn-dark"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Pray 24/7 Movement"
+        >
+            Pray 24/7 Movement
+        </button>
+        <a
+            href="https://forms.gle/wor6JmZFwZw5Ts4E7"
+            target="_blank"
+            class="btn btn-purple btn-sm"
+            role="button"
+            >Submit Entry</a
+        >
+
+        <div
+            class="embed-responsive embed-responsive-16by9"
+            style="margin: 10px"
+        >
+            <iframe
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQulMFqUx1Ucd7MJ-_rJ1T4iA5BBZuZK8UCd7JlM3P3RFgjAMIwp9TzGneFykzqkWlIUnB1sHBVqYVN/pubhtml?gid=1873169552&amp;single=false&amp;widget=false&amp;headers=false"
+                class="embed-responsive-item"
+                allowfullscreen
+            ></iframe>
+        </div>
+
+        <!-- <div
+            class="fb-post"
+            data-href="https://www.facebook.com/micmejia/posts/pfbid02Ya9p1YLuTPYX56bW9dLx42zuPKSyo3JfRHevrq7JLni9TxE91ukjZEcEQMXATZM5l"
+            data-width="500"
+        ></div> -->
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        ></script>
+
+        <section class="testimonial text-center">
+            <div class="container">
+                <div class="heading white-heading">ABOUT THIS MOVEMENT</div>
+                <div
+                    id="testimonial4"
+                    class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x"
+                    data-ride="carousel"
+                    data-pause="hover"
+                    data-interval="5000"
+                    data-duration="2000"
+                >
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="testimonial4_slide">
+                                <img
+                                    src="pics/mic.jpg"
+                                    class="img-circle img-responsive"
+                                />
+                                <p>
+                                    Sometime last May 2025, I received the
+                                    message from the Lord, that He wants us to
+                                    have a 24/7 prayer movement for the nation.
+                                    In which every hour, 24 hours a day, 7 days
+                                    a week, there will be someone and/or some
+                                    group from the body of Christ who will pray
+                                    in tongues. Right now, as I write this post,
+                                    I'm experiencing the strong presence of the
+                                    Lord. 🙇‍♂️🔥 God has a great plan for our
+                                    country, the Philippines, in this great
+                                    revival.
+                                </p>
+                                <h4>
+                                    <a
+                                        href="https://www.facebook.com/micmejia/posts/pfbid02Ya9p1YLuTPYX56bW9dLx42zuPKSyo3JfRHevrq7JLni9TxE91ukjZEcEQMXATZM5l"
+                                        class="btn btn-purple btn-sm"
+                                        >Mic Mejia</a
+                                    >
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial4_slide">
+                                <img
+                                    src="pics/aj.jpg"
+                                    class="img-circle img-responsive"
+                                />
+                                <p>
+                                    I want to share something God showed me in
+                                    prayer yesterday. I believe this is not just
+                                    for me, but for all of us who are standing
+                                    for our nation. While preparing for our
+                                    prayer meeting, I saw a vision. It was the
+                                    map of the Philippines—and above the
+                                    islands, I saw many tongues hovering in the
+                                    air. As I looked, I heard the Lord say, “I
+                                    am looking for tongues to use—tongues that
+                                    will pray for the things I want to do in
+                                    your nation.” I believe these tongues
+                                    represent people who are willing to pray,
+                                    intercede, and declare God's Word over the
+                                    Philippines.
+                                </p>
+                                <h4>
+                                    <a
+                                        href="https://www.facebook.com/itsajrosas/posts/pfbid0dMSNRLWr1qcjJjSEozJqDuAs4cf45d9eqjrb4Ny4xYK2pVDQKhjjLKofrSJjPCbul"
+                                        class="btn btn-purple btn-sm"
+                                        >It's AJ</a
+                                    >
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <a
+                        class="carousel-control-prev"
+                        href="#testimonial4"
+                        data-slide="prev"
+                    >
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a
+                        class="carousel-control-next"
+                        href="#testimonial4"
+                        data-slide="next"
+                    >
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <h5 class="hashtags">
+            <a href="https://www.facebook.com/hashtag/revivalpilipinas"
+                >#RevivalPilipinas</a
+            >
+            <a href="https://www.facebook.com/hashtag/pray247">#Pray247</a>
+        </h5>
+        <br />
+    </body>
+</html>
