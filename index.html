@@ -323,5 +323,18 @@
             >
         </h5>
         <div style="height: 50px"></div>
+        <div id="goatcounter">
+            <script>
+                var t = setInterval(function() {
+                    if (window.goatcounter && window.goatcounter.visit_count) {
+                        clearInterval(t)
+                        window.goatcounter.visit_count({append: '#goatcounter'})
+                    }
+                }, 100)
+            </script>
+            <script data-goatcounter="https://revivalpilipinas.goatcounter.com/count"
+                    async src="//gc.zgo.at/count.js"></script>           
+        </div>
+        <div style="height: 50px"></div>
     </body>
 </html>
